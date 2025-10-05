@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 265 100% 4%;
+    --foreground: 180 100% 90%;
+
+    --card: 265 60% 8%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 265 80% 6%;
+    --popover-foreground: 180 100% 90%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 265 100% 4%;
+
+    --secondary: 280 80% 40%;
+    --secondary-foreground: 180 100% 90%;
+
+    --muted: 265 40% 15%;
+    --muted-foreground: 180 30% 60%;
+
+    --accent: 155 100% 50%;
+    --accent-foreground: 265 100% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 265 40% 20%;
+    --input: 265 40% 20%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.5rem;
+
+    --cosmic-glow: 180 100% 50%;
+    --nebula-purple: 280 80% 40%;
+    --deep-space: 265 100% 2%;
+    --aurora-green: 155 100% 50%;
+  }
+
+  .dark {
+    --background: 265 100% 4%;
+    --foreground: 180 100% 90%;
+
+    --card: 265 60% 8%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 265 80% 6%;
+    --popover-foreground: 180 100% 90%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 265 100% 4%;
+
+    --secondary: 280 80% 40%;
+    --secondary-foreground: 180 100% 90%;
+
+    --muted: 265 40% 15%;
+    --muted-foreground: 180 30% 60%;
+
+    --accent: 155 100% 50%;
+    --accent-foreground: 265 100% 4%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 265 40% 20%;
+    --input: 265 40% 20%;
+    --ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  @keyframes cosmic-glow {
+    0%, 100% { opacity: 1; filter: brightness(1) drop-shadow(0 0 20px currentColor); }
+    50% { opacity: 0.8; filter: brightness(1.2) drop-shadow(0 0 30px currentColor); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .cosmic-glow {
+    animation: cosmic-glow 3s ease-in-out infinite;
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+}
